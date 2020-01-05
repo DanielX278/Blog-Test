@@ -32,7 +32,7 @@
     <?php if (!isLogged()) { ?>
 
       <!--    <a class="btn px-5 btn-secondary mr-3" role="button" href="login.php">Login</a> -->
-      <button type="button" class="btn px-5 btn-success mr-3" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="btn px-5 btn-success mr-3 nav-item" data-toggle="modal" data-target="#exampleModalCenter">
         Login
       </button>
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -70,6 +70,7 @@
 
     <?php } else { ?>
 
+      <span class="navbar-text mr-4">Benvenuto, <b><?= $_SESSION['loggedUser']['name'] ?></b></span>
       <a class="btn px-5 btn-primary  mr-3" role="button" href="post.php">Post</a>
       <a class="btn px-5 btn-danger" role="button" href="core/logout.php">Logout</a>
 

@@ -3,6 +3,7 @@
         "id": null,
         "title": "Musicurao alla Maker Faire EU 2019",
         "content": "Dodomimilaladodorerefafasolsolsisi.",
+        "author": "Daniele",
         "tags": [
             "Robotica",
             "Marcello"
@@ -12,9 +13,30 @@
         "id": null,
         "title": "Musicurao alla RoboCupEURO2019 di Hannover",
         "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quo omnis, accusantium reprehenderit natus accusamus quaerat sit nulla officiis dignissimos officia possimus laborum at quidem facilis suscipit cum voluptatibus dicta?",
+        "author": "Daniele",
         "tags": [
             "Curao",
             "Pippo"
+        ]
+    },
+    {
+        "id": null,
+        "title": "Alessia \u00e8 scema",
+        "content": "fubhjlbjkbgctydytcg",
+        "author": "Daniele",
+        "tags": [
+            "Alessia",
+            "Pippo"
+        ]
+    },
+    {
+        "id": null,
+        "title": "Nonzi",
+        "content": "Ciaooooooooo",
+        "author": "Pippo",
+        "tags": [
+            "Gennaro",
+            "Bullo"
         ]
     }
 ]

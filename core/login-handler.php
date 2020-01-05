@@ -9,18 +9,16 @@ try {
         $pdo = new PDO('mysql:host=localhost;dbname=blog', $username, $password);
 
 
-        $statement = $pdo->prepare('SELECT password from user where email=:email');
+        $statement = $pdo->prepare('SELECT firstName, password from user where email=:email');
         $statement->bindParam(':email', $_POST['email']);
         $statement->execute();
-        $passhashdb = $statement->fetch();
-
-
+        $userdata = $statement->fetch();
         if ($email === $_POST['email']) {
 
-            if (password_verify($passuser, $passhashdb[0])) {
+            if (password_verify($passuser, $userdata[1])) {
 
                 $_SESSION['loggedUser'] = [
-                    'name' => 'Admin'
+                    'name' => "$userdata[0]"
                 ];
                 header("Location: index.php");
                 return true;

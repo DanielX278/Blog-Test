@@ -16,7 +16,7 @@ class PostRepository
         $decodedContent = json_decode($fileContent, true);
         $posts = [];
         foreach ($decodedContent as $postData) {
-            $posts[] = new Post($postData['title'], $postData['content'], $postData['tags']);
+            $posts[] = new Post($postData['title'], $postData['content'], $postData['author'], $postData['tags']);
         }
         return $posts;
     }

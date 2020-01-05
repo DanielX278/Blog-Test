@@ -21,6 +21,9 @@
             <h2><?= $post->title ?></h2>
         </div>
         <div class="row mt-4">
+            <h5><?= $post->author ?></h5>
+        </div>
+        <div class="row mt-4">
             <p> <?= $post->content ?> </p>
         </div>
         <div class="row mt-4">
@@ -35,9 +38,11 @@
             <?php endforeach ?>
         </div>
         <?php if (isLogged()) { ?>
+            <?php if ($_SESSION['loggedUser']['name']==$post->author) {?>
             <div class="d-flex justify-content-end">
                 <a href="index.php?remove=<?= $post->title ?>"> RIMUOVI </a>
             </div>
+            <?php } ?>
         <?php } ?>
 
     <?php endforeach ?>
