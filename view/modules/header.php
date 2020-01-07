@@ -27,11 +27,15 @@
       <li class="nav-item">
         <a class="nav-link" href="about.php">About</a>
       </li>
-    </ul>
+    
 
+    <form class="form-inline my-0" method="GET" action="index.php">
+    <input class="form-control mr-sm-2" type="search" name="tag" placeholder="Inserisci Tag" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtra</button>
+  </form>
+</ul>
     <?php if (!isLogged()) { ?>
 
-      <!--    <a class="btn px-5 btn-secondary mr-3" role="button" href="login.php">Login</a> -->
       <button type="button" class="btn px-5 btn-success mr-3 nav-item" data-toggle="modal" data-target="#exampleModalCenter">
         Login
       </button>

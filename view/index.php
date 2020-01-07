@@ -8,10 +8,10 @@
         <h1 class="display-1">Non ci sono post!</h1>
     <?php } else { ?>
         <?php if (!isset($_GET['tag'])) { ?>
-            <h1 class="display-1">Ultimi post</h1>
+            <h1 class="display-1 mb-4">Ultimi post</h1>
 
         <?php } else { ?>
-            <h1 class="display-1">Tag: <?= $_GET['tag'] ?></h1>
+            <h1 class="display-1 mb-4">Tag: <?= $_GET['tag'] ?></h1>
         <?php } ?>
     <?php } ?>
 
@@ -39,14 +39,12 @@
                     <p> <?= $post->content ?> </p>
                 </div>
             </div>
-            <div class="row mt-2">
+          <!--  <div class="row mt-2">
                 <?php if (isset($post->img)) : ?>
                     <img width="<?= intval($post->width) . "px" ?>" height="<?= intval($post->height) . "px" ?>" src="<?= $post->img ?>">
                 <?php endif ?>
-            </div>
-            <div class="">
-
-            </div>
+            </div> -->
+            
             <div class="card-footer bg-light">
                 <div class="row">
                     <div class="col order-1">
