@@ -26,9 +26,9 @@
                     <div class="col order-1">
                         <h2><?= $post->title ?></h2>
                     </div>
-                    <div class="col order-12 d-flex justify-content-end align-middle">
+                    <div class="col order-12 d-flex justify-content-end align-middle ">
                         <?php foreach ($post->tags as $tag) : ?>
-                            <a href="index.php?tag=<?= $tag ?>"> <?php echo "&nbsp;$tag" ?> </a>
+                            <a class="text-decoration-none" href="index.php?tag=<?= $tag ?>"> <?php echo "&nbsp;$tag" ?> </a>
                         <?php endforeach ?>
                     </div>
                 </div>
