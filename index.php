@@ -8,7 +8,8 @@ if (isset($_GET['tag'])) {
     $posts = $repo->getAllByDatabase();
 }
 if (isset($_GET['remove'])){
-    $repo->remove($_GET['remove']);
+    
+    $repo->removeByDatabase($_GET['remove']);
     header("Location: index.php");
 }
 include 'view/index.php';

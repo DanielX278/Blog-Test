@@ -19,7 +19,7 @@ class PostRepository
 
             $postsdb = $query->fetchAll();
             $posts = [];
-            
+
 
             foreach ($postsdb as $postdb) {
                 $tagsdb = [];
@@ -32,8 +32,7 @@ class PostRepository
                     $tagsdb[] = $tag['title'];
                 }
 
-                $posts[] = new Post($postdb[1], $postdb['content'], $postdb['firstName'], $tagsdb); 
-                
+                $posts[] = new Post($postdb[1], $postdb['content'], $postdb['firstName'], $tagsdb);
             }
             return $posts;
         } catch (PDOException $e) {
@@ -55,7 +54,7 @@ class PostRepository
     public function getAllPostsByTag($selTag)
     {
         $exists = 0;
-        $posts = $this->getAll();
+        $posts = $this->getAllByDatabase();
         foreach ($posts as $i => $post) {
             foreach ($post->tags as $tag) {
                 if ($tag == $selTag) {
@@ -76,6 +75,28 @@ class PostRepository
         foreach ($posts as $index => $post) {
             if ($post->title === $removing) {
                 unset($posts[$index]);
+            }
+        }
+
+        $this->store($posts);
+    }
+    public function removeByDatabase($removingdb)
+    {
+        $posts = $this->getAllByDatabase();
+        foreach ($posts as $post) {
+            
+            if ($post->title === $removingdb) {
+                try {
+                    $username = 'root';
+                    $password = '';
+                    $pdo = new PDO('mysql:host=localhost;dbname=blogdef', $username, $password);
+                    $statement=$pdo->prepare("DELETE FROM post WHERE title=:title");
+                    $statement->bindParam(":title", $post->title);
+                    $statement->execute();
+                } catch (PDOException $e) {
+                    print "Error!: " . $e->getMessage() . "<br/>";
+                    die();
+                }
             }
         }
 
