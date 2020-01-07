@@ -5,7 +5,7 @@ include_once 'entity/PostRepository.php';
 if (isset($_GET['tag'])) {
     $posts = $repo->getAllPostsByTag($_GET['tag']);
 } else {
-    $posts = $repo->getAll();
+    $posts = $repo->getAllByDatabase();
 }
 if (isset($_GET['remove'])){
     $repo->remove($_GET['remove']);

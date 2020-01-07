@@ -19,6 +19,6 @@ class Post
 
     public function getTags()
     {
-        return $this->tags;
+        echo $this->tags;
     }
 }

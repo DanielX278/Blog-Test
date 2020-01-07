@@ -6,10 +6,10 @@ try {
     {
         $username = 'root';
         $password = '';
-        $pdo = new PDO('mysql:host=localhost;dbname=blog', $username, $password);
+        $pdo = new PDO('mysql:host=localhost;dbname=blogdef', $username, $password);
 
 
-        $statement = $pdo->prepare('SELECT firstName, password from user where email=:email');
+        $statement = $pdo->prepare('SELECT firstName, password, id from user where email=:email');
         $statement->bindParam(':email', $_POST['email']);
         $statement->execute();
         $userdata = $statement->fetch();
@@ -18,7 +18,8 @@ try {
             if (password_verify($passuser, $userdata[1])) {
 
                 $_SESSION['loggedUser'] = [
-                    'name' => "$userdata[0]"
+                    'name' => "$userdata[0]",
+                    'user_id'=> "$userdata[2]"
                 ];
                 header("Location: index.php");
                 return true;
